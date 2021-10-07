@@ -8,9 +8,11 @@ var usuarios=[
 console.log(usuarios);
 
 //Extraer el valor de la caja de usuario
+// cambiar String por el get element id
 var usuarioText = "usuario2"//document.getElementById("").value;
 
 //Extraer el valor de la caja de contraseña
+// cambiar String por el get element id
 var passwordText = "Koda" //document.getElementById("").value;
 
 
