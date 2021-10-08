@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* Body.................. */
+/* ----- */
+/*-----  */
+/* Body.................. */
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #820AD1;
+}
+
+/* header.................. */
+/* ----- */
+/*-----  */
+/* header.................. */
+.header-container{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo{
+    height: 100%;
+    width: 10%;
+}
+.logo-nubank{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* main.................. */
+/* ----- */
+/*-----  */
+/* main.................. */
+.main-container{
+    width: 100%;
+    height: 89%;
+    display: flex;
+    justify-content: center;
+}
+
+/* card.................. */
+/* ----- */
+/*-----  */
+/* card.................. */
+.card-login{
+    width: 450px;
+    height: 575px;
+    background-color: white;
+    border-radius: 0.3rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card-login__title{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin: 6rem 0;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+.label1{
+    margin-right: 26rem;
+    padding-bottom: 1rem;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
+}
+
+.login{
+    height: 30px;
+    width: 70%;
+}
+
+.label2{
+    margin-top: 4rem;
+    margin-right: 23rem;
+    padding-bottom: 1rem;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem; 
+}
+
+.login-button{
+    margin-top: 4.5rem;
+    padding: 2.5rem 13rem;
+}
