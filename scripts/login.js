@@ -1,41 +1,42 @@
 //Arreglo de usuarios predifinidos
 var usuarios=[
-    {nombre: "usuario1", contrasena: "anitalavalatina"},
-    {nombre: "usuario2", contrasena: "koda"},
-    {nombre: "usuario3", contrasena: "oriana"}
+    {nombre: "usuario1", contrasena: "anitalavalatina", saldo: 100},
+    {nombre: "usuario2", contrasena: "koda", saldo : 2000},
+    {nombre: "usuario3", contrasena: "oriana", saldo: 33}
 ];
 
 console.log(usuarios);
 
 //Extraer el valor de la caja de usuario
-// cambiar String por el get element id
-var usuarioText = "usuario2"//document.getElementById("").value;
+
+var usuarioText = document.getElementById("usuario-text");
+
 
 //Extraer el valor de la caja de contraseña
-// cambiar String por el get element id
-var passwordText = "Koda" //document.getElementById("").value;
+
+var passwordText = document.getElementById("password-text");
 
 
 
 //funcion para la validacion de usuario y contraseña
 function validacionUsuario() {
-
+    
     //valiacion de usuarios
     //Se uso every para parar el ciclo en el momento que el usuario y contraseña sean los mismos que 
     //los establecidos en el array
     usuarios.every(element => {
-
+        
         //validacion de usuario
-        if(usuarioText===element.nombre){
+        if(usuarioText.value===element.nombre){
             
             console.log(`encontre este usuario : ${usuarioText}`);
 
             //validacion de contrasena
-            if(passwordText===element.contrasena){
+            if(passwordText.value===element.contrasena){
                 console.log("entre a contrasena");
                 console.log(element.contrasena);
                 //redireccionamiento a pagina
-                location.href = "./pagina2.html";
+                location.href = "./interface.html";
                 return false;
             }
         }
@@ -46,4 +47,16 @@ function validacionUsuario() {
         
     });    
     
+}
+
+function retiro() {
+    
+}
+
+function abono(){
+
+}
+
+function logout() {
+    location.href = "./index.html";
 }
