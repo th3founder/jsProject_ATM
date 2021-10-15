@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* Body.................. */
+/* ----- */
+/*-----  */
+/* Body.................. */
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #f3efff;
+}
+
+/* header.................. */
+/* ----- */
+/*-----  */
+/* header.................. */
+.header-container{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #820AD1;
+    align-items: center;
+
+}
+
+.logo{
+    height: 100%;
+    width: 10%;
+}
+.logo-nubank{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.salir{
+    text-decoration: none;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    margin-right: 8rem;
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+
+}
+.salir:hover{
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem 1rem;
+    color: #820AD1;
+}
+
+/* main.................. */
+/* ----- */
+/*-----  */
+/* main.................. */
+.main-inter{
+    background-color: #820AD1;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+
+}
+
+
+/* left-side.................. */
+/* ----- */
+.left-side{
+    background-color: #820AD1;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-interface{
+    background-color: #f3efff;
+    width: 60%;
+    height: 70%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-welcome{
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.main-user{
+    font-size: 1.9rem;
+    font-family: Helvetica;
+    border-bottom: 2px solid rgb(125, 0, 163);
+}
+.main-line{
+    margin: 1.2rem 0;
+    width: 60%;
+    height: 0.5rem;
+    background-color: black;
+}
+.main-saldo{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.cantidad{
+    border-bottom: 2px solid rgb(125, 0, 163);
+}
+.main-button{
+    margin: 2rem 0;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 10px;
+    border: none;
+    background: #d3d3d3;
+    font-family: Helvetica;
+    color: black;
+}
+.main-button:hover{
+    color: rgb(125, 0, 163);
+    background: #d6d6d6;
+
+}
+
+
+/* right-side.................. */
+/* ----- */
+.right-side{
+    background-color: #820AD1;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.depositar{
+    background: whitesmoke;
+    border: 1rem solid rgb(200, 200, 200);
+}
+
+.right-title{
+    font-size: 2.3rem;
+    font-family: 'Varela Round', sans-serif;
+    margin: 1rem 0;
+}
+
+.inputUser{
+    margin: 2rem 0;
+    width: 50%;
+    height: 3rem;
+    font-family: Helvetica;
+}
