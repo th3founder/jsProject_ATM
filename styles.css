@@ -78,8 +78,20 @@ body{
 .login{
     height: 30px;
     width: 70%;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 2px solid;
 }
 
+.password{
+    height: 30px;
+    width: 70%;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 2px solid;  
+}
 .label2{
     margin-top: 4rem;
     margin-right: 23rem;
@@ -90,5 +102,28 @@ body{
 
 .login-button{
     margin-top: 4.5rem;
-    padding: 2.5rem 13rem;
+    padding: 2.5rem 12rem;
+    font-size: 1.4rem;
+    font-family: 'Varela Round', sans-serif;
+    background-color: transparent;
+    border: 2px solid rgb(222, 222, 222);
+    color: gray;
+}
+
+.login-button:hover{
+    background-color: rgb(142, 60, 218);
+    color: white;
+    transition: .5s;
+}
+
+.forget-password{
+    margin-top: 4rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: black;
+}
+
+.forget-password:hover{
+    color: #820AD1;
 }
