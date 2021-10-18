@@ -6,22 +6,18 @@
         {nombre: "usuario2", contrasena: "koda", saldo : 250},
         {nombre: "usuario3", contrasena: "oriana", saldo: 300}
     ];
-    console.log(usuarios);
+    //console.log(usuarios);
 
 //Extraer el valor de la caja de usuario
-
 var usuarioText = document.getElementById("usuario-text");
 
 
 //Extraer el valor de la caja de contraseña
-
 var passwordText = document.getElementById("password-text");
 
-
+//Extraer el valor de las cajas con los ids
 var login = document.getElementById('loginMain');
 var interface = document.getElementById('interfaceMain');
-
-// Funcion para cambiar el 'p' dedicados al nombre y al saldo
 
 
 //funcion para la validacion de usuario y contraseña
@@ -39,8 +35,8 @@ function validacionUsuario() {
 
             //validacion de contrasena
             if(passwordText.value===element.contrasena){
-                console.log("entre a contrasena");
-                console.log(element.contrasena);
+               //console.log("entre a contrasena");
+               //console.log(element.contrasena);
                 
                 //redireccionamiento a pagina
                 login.style.display = 'none';
@@ -79,8 +75,6 @@ function AgregarNombreSaldo() {
 }
 
 
-//****Cambiar usuario[] por el usuario que se registro*******
-
 function retiro() {
 
     let montoInput = document.getElementById('montoInput').value;
@@ -93,12 +87,12 @@ function retiro() {
             actualizacionMonto = element.saldo - Number(montoInput);
             
             if (actualizacionMonto>saldoLimiteMenor) {
-                console.log(actualizacionMonto);
+                //console.log(actualizacionMonto);
                     element.saldo = actualizacionMonto;
                     saldoLayer.innerHTML = element.saldo;       
             }else{
         
-                alert(`Por politica de la empresa su saldo  no puede ser mayor a $${saldoLimiteMenor}`);
+                alert(`Por politica de la empresa su saldo  no puede ser menor a $${saldoLimiteMenor}`);
             }
             return false;
             
@@ -137,11 +131,8 @@ function abono(){
 
 function logout() {
     interface.style.display = 'none';
-    login.style.display = 'flex';;
+    login.style.display = 'flex';
+    document.getElementById("password-text").value = '';
+    document.getElementById("usuario-text").value = '';
 }
 
-// Copiar el contenedor    "" <main class="main-inter" >"" de interface.html
-//y pegarlo en el index.html
-// modificar 
-//display: flex;
-//display: none;
