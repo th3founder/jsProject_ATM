@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="./stylesinterface.css">
     <title>Automatic Transfer Machine | Nubank</title>
 </head>
 <body class="body">
@@ -17,7 +17,8 @@
             <img src="https://nu.com.mx/images/seo/nu-icon.png?v=2" alt="" class="logo-nubank">
         </figure>
     </header>
-    <main class="main-container">
+    <!--Login main-->
+    <main class="main-container" id="loginMain">
         <div class="card-login">
             <h1 class="card-login__title">Accede a tu cuenta</h1>
             <label for="" class="label1">Usuario</label>
@@ -27,6 +28,30 @@
             <button class="login-button" onclick="validacionUsuario()">INGRESAR</button>
             <a href="" class="forget-password">olvidaste tu contraseña?</a>
         </div>
+    </main>
+<!-- interface main-->
+    <main class="main-inter" id="interfaceMain">
+        <section class="left-side">
+            <div class="main-interface">
+                <p for="" class="main-welcome">Bienvenid@</p>
+                <p class="main-user" id="nombreLayer">name</p>
+                <p class="main-line"></p>   
+                <p class="main-saldo">Tu saldo actual es de:</p>
+                <p class="main-saldo cantidad" id="saldoLayer">saldo</p>
+                <p class="main-line"></p>
+                
+            </div>
+        </section>
+        <section class="right-side">
+            <div class="main-interface depositar">
+                <p class="right-title">Ingresa la cantidad a depositar</p>
+                <input type="text" class="inputUser ingreso" id="montoInput">
+                <p class="main-saldo">Selecciona la operación que desea realizar</p>
+                <button class="main-button" onclick="abono()">Ingresar monto</button>
+                <button class="main-button" onclick="retiro()">Retirar monto</button>
+                <a href="#" onclick="logout()">salir</a>
+            </div>
+        </section>
     </main>
 </body>
 <script src="./scripts/login.js"></script>

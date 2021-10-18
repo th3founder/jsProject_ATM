@@ -2,9 +2,9 @@
 //Arreglo de usuarios predifinidos
 
     var usuarios=[
-        {nombre: "usuario1", contrasena: "anitalavalatina", saldo: 100, activo: false},
-        {nombre: "usuario2", contrasena: "koda", saldo : 2000, activo: false},
-        {nombre: "usuario3", contrasena: "oriana", saldo: 300, activo: false}
+        {nombre: "usuario1", contrasena: "anitalavalatina", saldo: 100},
+        {nombre: "usuario2", contrasena: "koda", saldo : 250},
+        {nombre: "usuario3", contrasena: "oriana", saldo: 300}
     ];
     console.log(usuarios);
 
@@ -18,10 +18,15 @@ var usuarioText = document.getElementById("usuario-text");
 var passwordText = document.getElementById("password-text");
 
 
+var login = document.getElementById('loginMain');
+var interface = document.getElementById('interfaceMain');
+
+// Funcion para cambiar el 'p' dedicados al nombre y al saldo
+
 
 //funcion para la validacion de usuario y contraseña
 function validacionUsuario() {
-   
+    
     //valiacion de usuarios
     //Se uso every para parar el ciclo en el momento que el usuario y contraseña sean los mismos que 
     //los establecidos en el array
@@ -36,35 +41,43 @@ function validacionUsuario() {
             if(passwordText.value===element.contrasena){
                 console.log("entre a contrasena");
                 console.log(element.contrasena);
+                
                 //redireccionamiento a pagina
-                location.href = "./interface.html";
-                element.activo=true;
+                login.style.display = 'none';
+                interface.style.display = 'flex';
+                AgregarNombreSaldo();
                 return false;
+                
             }
-        }
+        }else{
         console.log("Usuario/Contraseña equivocados");
         return true;
-
+        }
         //console.log(element.nombre);
         
     });    
     
 }
 
-// Funcion para cambiar el 'p' dedicados al nombre y al saldo
 function AgregarNombreSaldo() {
 
     
     // Encontrar el 'p' en la pagina relacionado con el nombre y el saldo
     let nombreLayer = document.getElementById('nombreLayer');
     let saldoLayer = document.getElementById('saldoLayer');
-
+    let saldoUsuario;
+    usuarios.forEach(element => {
+        if (usuarioText.value === element.nombre) {
+            saldoUsuario = element.saldo;
+        }
+    });
 
     // Cambiar los valores del html del nombre y del saldo    
-    nombreLayer.innerHTML = usuarios[2].nombre;
-    saldoLayer.innerHTML = usuarios[2].saldo;
-    console.log (usuarios[2].saldo);
+    nombreLayer.innerHTML = usuarioText.value;
+    saldoLayer.innerHTML = saldoUsuario;
+    
 }
+
 
 //****Cambiar usuario[] por el usuario que se registro*******
 
@@ -72,17 +85,26 @@ function retiro() {
 
     let montoInput = document.getElementById('montoInput').value;
     let saldoLayer = document.getElementById('saldoLayer');
-    let actualizacionMonto = usuarios[2].saldo - Number(montoInput);
     let saldoLimiteMenor = 10; 
+    let actualizacionMonto; 
 
-    if (actualizacionMonto>saldoLimiteMenor) {
-        console.log(actualizacionMonto);
-        usuarios[2].saldo=actualizacionMonto;
-        saldoLayer.innerHTML = usuarios[2].saldo;
-    }else{
-
-        alert(`Por politica de la empresa su saldo  no puede ser menor a  ${saldoLimiteMenor}`);
-    }
+    usuarios.every(element => {
+        if (usuarioText.value === element.nombre) {
+            actualizacionMonto = element.saldo - Number(montoInput);
+            
+            if (actualizacionMonto>saldoLimiteMenor) {
+                console.log(actualizacionMonto);
+                    element.saldo = actualizacionMonto;
+                    saldoLayer.innerHTML = element.saldo;       
+            }else{
+        
+                alert(`Por politica de la empresa su saldo  no puede ser mayor a $${saldoLimiteMenor}`);
+            }
+            return false;
+            
+        }
+        return true;
+    });
     document.getElementById('montoInput').value = '';
     
     
@@ -91,20 +113,35 @@ function retiro() {
 function abono(){
     let montoInput = Number(document.getElementById('montoInput').value);
     let saldoLayer = document.getElementById('saldoLayer');
-    let actualizacionMonto = usuarios[2].saldo + montoInput;
-    let saldoLimiteMayor = 1000; 
-
-    if (actualizacionMonto<saldoLimiteMayor) {
-        console.log(actualizacionMonto);
-        usuarios[2].saldo=actualizacionMonto;
-        saldoLayer.innerHTML = usuarios[2].saldo;
-    }else{
-
-        alert(`Por politica de la empresa su saldo  no puede ser mayor a $${saldoLimiteMayor}`);
-    }
+    let saldoLimiteMayor = 1000;
+    let actualizacionMonto; 
+    usuarios.every(element => {
+        if (usuarioText.value === element.nombre) {
+            actualizacionMonto = element.saldo + Number(montoInput);
+            if (actualizacionMonto<saldoLimiteMayor) {
+                console.log(actualizacionMonto);
+                    element.saldo = actualizacionMonto;
+                    saldoLayer.innerHTML = element.saldo;       
+            }else{
+        
+                alert(`Por politica de la empresa su saldo  no puede ser mayor a $${saldoLimiteMayor}`);
+            }
+            return false;
+            
+        }
+        return true;
+    });
+    
     document.getElementById('montoInput').value = '';
 }
 
 function logout() {
-    location.href = "./index.html";
+    interface.style.display = 'none';
+    login.style.display = 'flex';;
 }
+
+// Copiar el contenedor    "" <main class="main-inter" >"" de interface.html
+//y pegarlo en el index.html
+// modificar 
+//display: flex;
+//display: none;
